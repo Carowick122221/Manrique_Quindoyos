@@ -16,9 +16,3 @@ Codes Contains the solutions to the problems:
 8. Largest Product in a Series
 9. Special Pythagorean Triplet
 10. Summation of Primes
-11.
-12.
-13.
-14.
-15.
-
