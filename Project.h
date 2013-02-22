@@ -29,7 +29,7 @@ class Project
         void power_digit_sum();
         void number_letter_counts();
         void max_path_sum_one();
-            void biggestSum(int*, int*, int*);
+            void bigSum(int*, int*, int*);
         void counting_sundays();
             int check_Days(int *month);
         void factorial_digit_sum();

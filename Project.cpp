@@ -831,20 +831,20 @@ void Project::number_letter_counts()
         "were written in words is: " << total <<endl;
 }
 //18th
-#define TRIANGLE "projectnum18.txt"
+#define num_triangle "projectnum18.txt"
 const int MAX = 100;
 
-void Project :: biggestSum(int* u, int* l, int* count)
+void Project :: bigSum(int* j, int* k, int* count)
 {
     for(int i = 0; i < *count; i++)
     {
-        if( ( *(u+i) + *(l+i) ) > ( *(u+i) + *(l+i+1) ) )
+        if( ( *(j+i) + *(k+i) ) > ( *(j+i) + *(k+i+1) ) )
         {
-            *(u+i) =  ( *(u+i) + *(l+i) );
+            *(j+i) =  ( *(j+i) + *(k+i) );
         }
         else
         {
-             *(u+i) =  ( *(u+i) + *(l+i+1) );
+             *(j+i) =  ( *(j+i) + *(k+i+1) );
         }
      }
 }
@@ -854,16 +854,18 @@ void Project::max_path_sum_one()
     Project proj;
     char* lines;
 
-    fstream infile(TRIANGLE);
+    fstream infile(num_triangle);
 
-    int* upperRow;
-    int* lowerRow;
-    int* rows[MAX];
+    int* upRow;
+    int* lowRow;
+    int* row[MAX];
     static int numLines     = 0;
+
+    cout << "Calculating ....... " <<endl;
 
     if(! infile.is_open() )
     {
-        cout << "Could not open " << TRIANGLE << endl;
+        cout << "Could not open " << num_triangle << endl;
         exit(1);
     }
 
@@ -876,51 +878,47 @@ void Project::max_path_sum_one()
             break;
 
         int len = strlen(lines) - numLines;     //Define int arrays of
-        rows[numLines] = new int[len];          //correct length (no spaces)
+        row[numLines] = new int[len];          //correct length (no spaces)
 
         int pos = 0;
         for(int i = 0; i < strlen(lines); i++)
         {
            if ( ' ' == lines[i])                //Convert to ints, skip space
            {
-                rows[numLines][pos] = static_cast<int>(lines[i+1]-48);
-                rows[numLines][pos] *= 10;
-                rows[numLines][pos] += static_cast<int>(lines[i+2]-48);
-               i += 2;
+                row[numLines][pos] = static_cast<int>(lines[i+1]-48);
+                row[numLines][pos] *= 10;
+                row[numLines][pos] += static_cast<int>(lines[i+2]-48);
+                i += 2;
             }
             else
             {
-                rows[numLines][pos] = static_cast<int>(lines[i]-48);
-                rows[numLines][pos] *= 10;
-                rows[numLines][pos++] += static_cast<int>(lines[i+1]-48);
+                row[numLines][pos] = static_cast<int>(lines[i]-48);
+                row[numLines][pos] *= 10;
+                row[numLines][pos++] += static_cast<int>(lines[i+1]-48);
                 i += 2;
             }
         }
-        numLines++;
-        delete[] lines;
+            numLines++;
         }
-    infile.close();
-    numLines--;                                //Reverse superfluous decrement
+            infile.close();
+            numLines--;
 
-    cout << endl;
-
+    cout << "\a\a\a" <<endl;
     while(numLines > 0)
     {
-        lowerRow = rows[numLines];
-        upperRow = rows[numLines-1];
+        lowRow = row[numLines];
+        upRow = row[numLines-1];
 
-        proj.biggestSum(upperRow, lowerRow, &numLines);
+        proj.bigSum(upRow, lowRow, &numLines);
 
         for(int i = 0; i < numLines; i++)
-             cout << *(upperRow+i) << " ";
-        cout << endl;
-        delete[] lowerRow;
-        numLines--;
+        {
+            cout << *(upRow+i) << " ";
+        }
+            cout <<endl;
+            numLines--;
     }
-    delete[] upperRow;
 }
-
-
 int Project::check_Days(int *month)
 {
     if( (*month==1) || (*month==3) || (*month==5) || (*month==7) || (*month==8) || (*month==10) || (*month==12) ) //Jan, March, May, July, August, October, December
