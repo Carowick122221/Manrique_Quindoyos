@@ -109,6 +109,9 @@ int main()
         case 20:
             proj.factorial_digit_sum();
             break;
+        case 21:
+            proj.names_scores();
+            break;
         case EXIT:
             done=true;
             break;

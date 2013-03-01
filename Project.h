@@ -33,6 +33,7 @@ class Project
         void counting_sundays();
             int check_Days(int *month);
         void factorial_digit_sum();
+        void names_scores();
     protected:
     private:
 };

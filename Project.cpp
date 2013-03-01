@@ -1020,4 +1020,53 @@ void Project::factorial_digit_sum()
         cout << "\a\a\aThe sum of the digits of 100! is: " << sum_facto <<endl;
 }
 
+//21st
+void Project::names_scores()
+{
+    char n;
+    string name="";
+    long long score=0, sum = 0;
+    vector<string> names;
+    ifstream myFile("names.txt");
+
+    cout << "Calculating ......... \n\n\n";
+
+    if(myFile.is_open())
+    {
+        while(!myFile.eof())
+        {
+            n = myFile.get();
+            if(isalpha(n))
+            {
+                name.push_back(n);
+            }
+            else
+            {
+                if(!name.empty())
+                {
+                    names.push_back(name);
+                    name.clear();
+                }
+            }
+        }
+    }
+        myFile.close();
+
+    sort(names.begin(),names.end());
+
+    for(int i=0;i<names.size();i++)
+    {
+        sum=0;
+        for(int j=0;j<names[i].size();j++)
+        {
+            sum += (names[i][j]-64);
+        }
+            sum *= (i+1);
+            score += sum;
+    }
+        cout<<"\a\a\aThe total of all the name scores in the file is: " << score <<endl;
+}
+
+
+
 
