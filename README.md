@@ -47,4 +47,4 @@ Codes Contains the solutions to the problems:
 
 20. Factorial Digit Sum
 
-
+21. Names Scores
