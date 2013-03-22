@@ -3,7 +3,7 @@ Manrique_Quindoyos
 
 Project in Data Structure
 
-Progress.............21 out of 400
+Progress.............23 out of 23
 
 Codes Contains the solutions to the problems:
 
@@ -48,3 +48,7 @@ Codes Contains the solutions to the problems:
 20. Factorial Digit Sum
 
 21. Names Scores
+
+22. 1000-digit Fibonacci Number
+
+23. Truncatable Primes 
