@@ -26,9 +26,12 @@ const string Problem[]={
     "Maximum Path Sum I",
     "Counting Sundays",
     "Factorial Digit Sum",
+    "Name Scores",
+    "1000-digit Fibonacci Series",
+    "Truncatable Primes",
     "Exit"
     };
-const int NUM_PROBLEMS=20;
+const int NUM_PROBLEMS=23;
 const int EXIT=NUM_PROBLEMS+1;
 
 int main()
@@ -111,6 +114,12 @@ int main()
             break;
         case 21:
             proj.names_scores();
+            break;
+        case 22:
+            proj.first_1000_digit_fibonacci();
+            break;
+        case 23:
+            proj.truncatable_primes();
             break;
         case EXIT:
             done=true;

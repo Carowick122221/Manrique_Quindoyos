@@ -34,6 +34,10 @@ class Project
             int check_Days(int *month);
         void factorial_digit_sum();
         void names_scores();
+        void first_1000_digit_fibonacci();
+        int truncatable_primes();
+            void Con(int p[],int m);
+            int trun (int a[], int m, int flag);
     protected:
     private:
 };

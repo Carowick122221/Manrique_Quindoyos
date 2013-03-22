@@ -30,3 +30,22 @@
 
 1360923634 c:\users\akram\desktop\manrique_quindoyos\project.h
 
+1363944048 source:c:\users\akram\desktop\manrique_quindoyos\manrique_quindoyos\main.cpp
+	<iostream>
+	<cstdlib>
+	"Project.h"
+
+1363943691 c:\users\akram\desktop\manrique_quindoyos\manrique_quindoyos\project.h
+	<vector>
+
+1363943691 source:c:\users\akram\desktop\manrique_quindoyos\manrique_quindoyos\project.cpp
+	<algorithm>
+	<iostream>
+	<fstream>
+	<sstream>
+	<math.h>
+	<stdio.h>
+	<vector>
+	<string.h>
+	"Project.h"
+

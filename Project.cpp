@@ -1067,6 +1067,105 @@ void Project::names_scores()
         cout<<"\a\a\aThe total of all the name scores in the file is: " << score <<endl;
 }
 
+//22nd
+void Project::first_1000_digit_fibonacci()
+{
+    float first=1,second=1, hold=0;
+    int digit=1, count=2;
 
+    cout << "Calculating ......... \n\n\n";
 
+    do
+    {
+        hold = first;
+        first = second;
+        second = hold + first;
+        count++;
 
+        if (second > 10)
+        {
+            second /= 10;
+            first/=10;
+            digit++;
+        }
+    }
+    while (digit < 1000);
+    {
+        cout << "\a\a\aThe first term in the Fibonacci sequence to contain 1000 digits is: " << count <<endl;
+    }
+}
+
+//23rd
+int z;
+int prime[6]={1,2,3,5,7,9};
+
+int Project::trun(int a[], int m, int flag)
+{
+    Project proj;
+    int i,sum=0,p=100,t=0;
+
+    for(i=0;i<m;i++)
+    {
+        sum=sum*10+a[i];
+        t=sum;
+    }
+    while(p/10<sum)
+    {
+        for(i=3;i<=sqrt(t);i+=2)
+        {
+            if(t%i==0)
+            {
+                return 0;
+            }
+        }
+        if(flag==1)
+        {
+            break;
+        }
+            t = sum%p;
+            p *= 10;
+    }
+        if(a[m-1]!=1&&a[m-1]!=9&&flag!=1)
+        {
+            z += sum;
+        }
+            return 1;
+}
+void Project::Con(int p[],int m)
+{
+    Project proj;
+    int i=0,n=0,flag=0;
+
+    for(i=0;i<6;i++)
+    {
+        if(i==1)
+        {
+            continue;
+        }
+            p[m]=prime[i];
+
+            if(proj.trun(p,m+1,1)==1)
+            {
+                if(proj.trun(p,m+1,2)==1)
+                {
+                    n++;
+                }
+                    proj.Con(p,m+1);
+            }
+     }
+}
+int Project::truncatable_primes()
+{
+    Project proj;
+    int i=0,p[50],k=0;
+
+    cout << "Calculating ......... \n\n\n";
+
+    for(i=1;i<5;i++)
+    {
+        p[k]=prime[i];
+        proj.Con(p,k+1);
+    }
+        cout << "\a\a\aThe sum of the only eleven primes that are both truncatable from left to right and right to left is: " << z <<endl;
+        return 0;
+}
